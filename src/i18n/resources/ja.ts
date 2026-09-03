@@ -2241,6 +2241,7 @@ export const ja: TranslationTree = {
 		openAgendaView: "アジェンダビューを開く",
 		openPomodoroView: "ポモドーロタイマーを開く",
 		openKanbanView: "カンバンボードを開く",
+		openGanttView: "ガントビューを開く",
 		updateDefaultBaseFiles: "既定の Base ファイルを更新",
 		openPomodoroStats: "ポモドーロ統計を開く",
 		openStatisticsView: "タスクとプロジェクト統計を開く",

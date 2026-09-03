@@ -2241,6 +2241,7 @@ export const ru: TranslationTree = {
 		openAgendaView: "Открыть представление планов",
 		openPomodoroView: "Открыть таймер помодоро",
 		openKanbanView: "Открыть доску канбан",
+		openGanttView: "Открыть представление диаграммы Ганта",
 		updateDefaultBaseFiles: "Обновить файлы Base по умолчанию",
 		openPomodoroStats: "Открыть статистику помодоро",
 		openStatisticsView: "Открыть статистику задач и проектов",

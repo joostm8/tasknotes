@@ -1,0 +1,17 @@
+filters:
+  and:
+    - file.hasTag("task")
+views:
+  - type: taskNotesGantt
+    name: "Gantt Chart"
+    order:
+      - status
+      - priority
+      - scheduled
+      - due
+      - file.name
+    sort:
+      - column: scheduled
+        direction: ASC
+    options:
+      granularity: week

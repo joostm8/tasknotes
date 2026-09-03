@@ -4,6 +4,7 @@ import { buildTaskListViewFactory } from "./TaskListView";
 import { buildKanbanViewFactory } from "./KanbanView";
 import { buildCalendarViewFactory } from "./CalendarView";
 import { buildMiniCalendarViewFactory } from "./MiniCalendarView";
+import { buildGanttViewFactory } from "./GanttView";
 import { registerBasesView, unregisterBasesView } from "./api";
 import { buildCalendarViewOptions, buildMiniCalendarViewOptions } from "./calendarViewOptions";
 import { createTaskNotesLogger } from "../utils/tasknotesLogger";
@@ -227,7 +228,19 @@ export async function registerBasesTaskList(plugin: TaskNotesPlugin): Promise<bo
 				logger
 			);
 
-			if (!taskListSuccess && !kanbanSuccess && !calendarSuccess && !miniCalendarSuccess) {
+			const ganttSuccess = registerBasesView(
+				plugin,
+				"taskNotesGantt",
+				{
+					name: "TaskNotes Gantt",
+					icon: "gantt-chart",
+					factory: buildGanttViewFactory(plugin),
+					options: () => [{ type: "dropdown", key: "granularity", displayName: "Time granularity", default: "week", options: { day: "Day", week: "Week", month: "Month", quarter: "Quarter", year: "Year" } }],
+				},
+				logger
+			);
+
+			if (!taskListSuccess && !kanbanSuccess && !calendarSuccess && !miniCalendarSuccess && !ganttSuccess) {
 				logger.debug("Bases plugin not available for registration", {
 					category: "configuration",
 					operation: "register-views",
@@ -235,7 +248,7 @@ export async function registerBasesTaskList(plugin: TaskNotesPlugin): Promise<bo
 				return false;
 			}
 
-			if (!taskListSuccess || !kanbanSuccess || !calendarSuccess || !miniCalendarSuccess) {
+			if (!taskListSuccess || !kanbanSuccess || !calendarSuccess || !miniCalendarSuccess || !ganttSuccess) {
 				logger.warn("Some TaskNotes Bases views failed to register", {
 					category: "configuration",
 					operation: "register-views",
@@ -244,6 +257,7 @@ export async function registerBasesTaskList(plugin: TaskNotesPlugin): Promise<bo
 						kanbanSuccess,
 						calendarSuccess,
 						miniCalendarSuccess,
+						ganttSuccess,
 					},
 				});
 				return false;
@@ -295,6 +309,7 @@ export function unregisterBasesViews(plugin: TaskNotesPlugin): void {
 		unregisterBasesView(plugin, "tasknotesKanban", logger);
 		unregisterBasesView(plugin, "tasknotesCalendar", logger);
 		unregisterBasesView(plugin, "tasknotesMiniCalendar", logger);
+		unregisterBasesView(plugin, "taskNotesGantt", logger);
 	} catch (error) {
 		logger.error("Error during view unregistration", {
 			category: "provider",

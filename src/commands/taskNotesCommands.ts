@@ -53,6 +53,13 @@ export function createTaskNotesCommandDefinitions(
 			},
 		},
 		{
+			id: "open-gantt-view",
+			nameKey: "commands.openGanttView",
+			callback: async (ctx) => {
+				await ctx.openBasesFileForCommand("open-gantt-view");
+			},
+		},
+		{
 			id: "update-default-base-files",
 			nameKey: "commands.updateDefaultBaseFiles",
 			callback: async (ctx) => {

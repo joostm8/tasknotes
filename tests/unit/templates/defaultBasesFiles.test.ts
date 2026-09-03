@@ -58,6 +58,15 @@ describe("defaultBasesFiles", () => {
 		expect(template).not.toContain("    options:\n      columnWidth: 280");
 	});
 
+	it("generates a space-indented Gantt Base view", () => {
+		const template = generateBasesFileTemplate("open-gantt-view", createMockPlugin() as any);
+
+		expect(template).toContain("  - type: taskNotesGantt\n    name: \"Gantt Chart\"");
+		expect(template).toContain("sort:\n      - column: scheduled\n        direction: ASC");
+		expect(template).toContain("options:\n      granularity: week");
+		expect(template).not.toContain("\t");
+	});
+
 	it("adds a dedicated manual-order task list view while preserving urgency views", () => {
 		const template = generateBasesFileTemplate("open-tasks-view", createMockPlugin() as any);
 

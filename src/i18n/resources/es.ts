@@ -2241,6 +2241,7 @@ export const es: TranslationTree = {
 		openAgendaView: "Abrir vista de agenda",
 		openPomodoroView: "Abrir temporizador pomodoro",
 		openKanbanView: "Abrir tablero kanban",
+		openGanttView: "Abrir vista de Gantt",
 		updateDefaultBaseFiles: "Actualizar archivos Base predeterminados",
 		openPomodoroStats: "Abrir estadísticas de pomodoro",
 		openStatisticsView: "Abrir estadísticas de tareas y proyectos",

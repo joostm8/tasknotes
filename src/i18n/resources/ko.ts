@@ -2225,6 +2225,7 @@ export const ko: TranslationTree = {
 		openAgendaView: "일정 뷰 열기",
 		openPomodoroView: "뽀모도로 타이머 열기",
 		openKanbanView: "칸반 보드 열기",
+		openGanttView: "간트 보기 열기",
 		updateDefaultBaseFiles: "기본 Base 파일 업데이트",
 		openPomodoroStats: "뽀모도로 통계 열기",
 		openStatisticsView: "작업 및 프로젝트 통계 열기",

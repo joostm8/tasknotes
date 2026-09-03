@@ -2241,6 +2241,7 @@ export const zh: TranslationTree = {
 		openAgendaView: "打开议程视图",
 		openPomodoroView: "打开番茄钟计时器",
 		openKanbanView: "打开看板",
+		openGanttView: "打开甘特图视图",
 		updateDefaultBaseFiles: "更新默认 Base 文件",
 		openPomodoroStats: "打开番茄钟统计",
 		openStatisticsView: "打开任务和项目统计",

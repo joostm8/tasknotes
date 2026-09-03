@@ -233,6 +233,7 @@ export interface TaskNotesSettings {
 		"open-tasks-view": string;
 		"open-advanced-calendar-view": string;
 		"open-agenda-view": string;
+		"open-gantt-view": string;
 		"pomodoro-stats-base": string;
 		relationships: string; // Bases file for unified relationships widget
 		[key: string]: string; // Allow string indexing

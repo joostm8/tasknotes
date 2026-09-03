@@ -684,6 +684,24 @@ ${orderYaml}
       hideEmptyColumns: false
 `;
 		}
+		case 'open-gantt-view': {
+			const scheduledProperty = mapPropertyToBasesProperty('scheduled', plugin);
+			return `# Gantt Chart
+
+${formatFilterAsYAML(taskFilterConditions)}
+
+views:
+  - type: taskNotesGantt
+    name: "Gantt Chart"
+    order:
+${orderYaml}
+    sort:
+      - column: ${scheduledProperty}
+        direction: ASC
+    options:
+      granularity: week
+`;
+		}
 
 		case 'open-tasks-view': {
 			const statusProperty = mapPropertyToBasesProperty('status', plugin);
