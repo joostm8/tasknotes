@@ -18,6 +18,9 @@ installation:
 
 This is like the very first working iteration, probably needs some more tweaking, let me know if you think this is a good idea.
 
+
+<img src="gantt-preview.png">
+
 # <img src="tasknotes-gradient.svg" width="32" height="32" style="vertical-align: middle;"> TaskNotes for Obsidian
 
 A task management plugin where each task is a separate Markdown note, and all views are powered by [Obsidian Bases](https://help.obsidian.md/bases).
