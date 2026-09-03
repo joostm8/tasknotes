@@ -1,3 +1,23 @@
+Fork of tasknotes for Obsidian to try and implement a gantt-chart view.
+
+installation:
+
+- install node.js
+- clone repo.
+- create file `.copy-files.local` at repo root.
+- place path to Obsidian Vault plugin folder in that file. E.g. mine contsains "C:\Users\Joost\OneDrive - Universiteit Antwerpen\Work\onderzoek\01-projects\pm-test-vault\.obsidian\plugins\tasknotes" (without the quotes)
+- build with `npm run build:test`. In the end you should see that the files were copied
+
+  ✅ Files copied to: C:\Users\Joost\OneDrive - Universiteit Antwerpen\Work\onderzoek\01-projects\pm-test-vault\.obsidian\plugins\tasknotes
+  ✅ Copied 3 files to 1 destination(s)
+
+- Open Obsidian, in the list of views you should also see a "gantt-default" and there is a "open gantt view" command in the command palette.
+- The gantt-view takes the "scheduled" date as the start date and the "due" date as the end date of a task.
+- Ctrl+zoom with mousewheel changes the zoom level (day, week, month, year)
+- color of the tasks is matched to their priority for now.
+
+This is like the very first working iteration, probably needs some more tweaking, let me know if you think this is a good idea.
+
 # <img src="tasknotes-gradient.svg" width="32" height="32" style="vertical-align: middle;"> TaskNotes for Obsidian
 
 A task management plugin where each task is a separate Markdown note, and all views are powered by [Obsidian Bases](https://help.obsidian.md/bases).
