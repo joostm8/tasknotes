@@ -1,5 +1,5 @@
 .tn-taskNotesGantt { display: flex; flex-direction: column; height: 100%; min-height: 0; }
-.tn-gantt { display: grid; grid-template-columns: minmax(180px, 28%) minmax(0, 1fr); min-height: 0; height: 100%; border: 1px solid var(--background-modifier-border); }
+.tn-gantt { display: grid; flex: 1; grid-template-columns: minmax(180px, 28%) minmax(0, 1fr); min-height: 0; height: 100%; border: 1px solid var(--background-modifier-border); }
 .tn-gantt__labels { min-width: 0; overflow-y: auto; border-right: 1px solid var(--background-modifier-border); }
 .tn-gantt__labels-header, .tn-gantt__header { height: 36px; box-sizing: border-box; display: flex; align-items: center; font-weight: var(--font-semibold); color: var(--text-muted); border-bottom: 1px solid var(--background-modifier-border); }
 .tn-gantt__labels-header { padding: 0 var(--size-4-3); }
@@ -13,4 +13,13 @@
 .tn-gantt__cell { border-right: 1px solid var(--background-modifier-border); border-bottom: 1px solid var(--background-modifier-border); }
 .tn-gantt__bar { align-self: center; height: 16px; margin: 0 3px; border-radius: 2px; opacity: 0.85; z-index: 1; }
 .tn-gantt-empty { padding: var(--size-4-4); color: var(--text-muted); }
-@media (max-width: 600px) { .tn-gantt { grid-template-columns: minmax(130px, 42%) minmax(0, 1fr); } }
+@media (max-width: 600px) { .tn-gantt { grid-template-columns: minmax(130px, 42%) minmax(0, 1fr); } }.tn-gantt__toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--size-4-2); padding: var(--size-4-1) 0; }
+.tn-gantt__toolbar-chunk { display: flex; align-items: center; gap: 0.25rem; min-width: 0; }
+.tn-gantt__title { flex: 1; min-width: 0; overflow: hidden; text-align: center; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); }
+.tn-gantt__button { padding: 0.3rem 0.6rem; font-size: 0.8rem; background: transparent; border: none; box-shadow: none; color: var(--text-muted); border-radius: 4px; }
+.tn-gantt__button:hover { background: var(--background-modifier-hover); color: var(--text-normal); }
+.tn-gantt__button.is-active, .tn-gantt__button--today { background: var(--interactive-accent); color: var(--text-on-accent); }
+.tn-gantt__button--today:hover { background: var(--interactive-accent-hover); color: var(--text-on-accent); }
+.tn-gantt__timeline { position: relative; }
+.tn-gantt__today { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--interactive-accent); pointer-events: none; z-index: 2; }
+.tn-gantt__today--day { background: color-mix(in srgb, var(--interactive-accent) 25%, transparent); }

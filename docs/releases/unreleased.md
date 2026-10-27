@@ -35,6 +35,7 @@ When a change has user-facing documentation, include a canonical tasknotes.dev l
 ## Added
 
 - Added a Gantt Bases view for visualizing filtered tasks between their scheduled and due dates.
+- The Gantt view now has a toolbar with previous/next/today navigation, a title showing the visible range, and Y/Q/M/W/D zoom buttons. Week and day headers now show `week number - dd/mm` and `dd/mm`.
 
 - (#2147) Added context-menu actions for recording task completion today, on the scheduled date, on the due date, or on a chosen date. The actions can be grouped in a submenu from Appearance settings. See [Completing Tasks](https://tasknotes.dev/features/task-management/#completing-tasks).
   - Rescheduling a recurring task can reactivate affected completed or skipped instances after confirmation. See [Recurring Tasks](https://tasknotes.dev/features/recurring-tasks/).
